@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cookie</title>
+    <!-- <link href="style.css" rel="stylesheet" type="text/css"> -->
+    <script type="text/javascript" src="js/sha1.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript">
+        function SWAuthUser() {
+            let pass = '5925f290d8a86e06fa6d3f609a22ceb09b332768';
+            let value = document.getElementById('password').value;
+            console.log("debug" + hex_sha1(value))
+
+            if (hex_sha1(value) == pass) {
+                document.getElementById('result').innerHTML = 'Authorized.';
+            }
+            else {
+                document.getElementById('result').innerHTML = 'Please input password.';
+            }
+            SWSetCookie('sw_javascript_auth_password', value)
+        }
+    </script>
+</head>
+
+<body>
+    <!-- password: GentooLinux -->
+    <input id='password' type='password'>
+    <input id='sw_button' type='button' value='SEND' onclick="SWAuthUser()">
+    <div id='result'></div>
+
+</body>
+<script type="text/javascript" defer="defer">
+    document.getElementById('password').value = SWGetCookie('sw_javascript_auth_password');
+    SWAuthUser();
+</script>
+
+</html>
