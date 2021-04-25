@@ -22,5 +22,10 @@ Ref:
 http://webos-goodies.jp/archives/50561473.html
 
 ### Rust
-Ref:
+- Basic Rust <br>
+https://doc.rust-jp.rs/book-ja/title-page.html
+
+- Rust Server <br>
 https://qiita.com/pyama2000/items/72ff7d772682d2caa53e
+https://utano.jp/entry/2014/08/redis_install_for_mac/
+
